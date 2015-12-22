@@ -8,3 +8,5 @@
 build/
 nbproject
 vendor
+var/tmp/*
+var/log/*
