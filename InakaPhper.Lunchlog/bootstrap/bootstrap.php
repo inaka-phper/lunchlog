@@ -3,7 +3,7 @@
 /**
  * @global string $context
  */
-namespace MyVendor\MyProject;
+namespace InakaPhper\Lunchlog;
 
 use BEAR\Package\Bootstrap;
 use Doctrine\Common\Annotations\AnnotationRegistry;

@@ -1,6 +1,6 @@
 <?php
 
-namespace MyVendor\MyProject\Resource\Page;
+namespace InakaPhper\Lunchlog\Resource\Page;
 
 class IndexTest extends \PHPUnit_Framework_TestCase
 {

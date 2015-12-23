@@ -1,5 +1,5 @@
 {
-    "name": "my-vendor/my-project",
+    "name": "inaka-phper/lunchlog",
     "type": "project",
     "description": "",
     "license": "proprietary",
@@ -18,7 +18,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "MyVendor\\MyProject\\": "src/"
+            "InakaPhper\\Lunchlog\\": "src/"
         }
     },
     "scripts": {
