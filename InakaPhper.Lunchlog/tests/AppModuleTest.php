@@ -1,6 +1,6 @@
 <?php
 
-namespace MyVendor\MyProject;
+namespace InakaPhper\Lunchlog;
 
 use BEAR\Package\Bootstrap;
 use BEAR\Sunday\Extension\Application\AbstractApp;
