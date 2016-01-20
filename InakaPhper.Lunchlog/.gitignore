@@ -11,3 +11,4 @@ nbproject
 vendor
 var/tmp/*
 var/log/*
+node_modules
