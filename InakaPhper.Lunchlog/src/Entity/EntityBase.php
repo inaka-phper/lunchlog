@@ -75,6 +75,8 @@ abstract class EntityBase
      */
     private function isHidden(string $name): bool
     {
+        array_push($this->hidden, 'hidden');
+
         return in_array($name, $this->hidden, true);
     }
 }
