@@ -5,6 +5,7 @@ namespace InakaPhper\Lunchlog\Module;
 use BEAR\AppMeta\AppMeta;
 use BEAR\Package\PackageModule;
 use Dotenv\Dotenv;
+use InakaPhper\Lunchlog\Entity\Shop;
 use Ray\AuraSqlModule\AuraSqlModule;
 use Ray\Di\AbstractModule;
 
@@ -26,5 +27,8 @@ class AppModule extends AbstractModule
         $this->install(new AuraSqlModule(getenv('PDO_DSN'), getenv('PDO_USER'), getenv('PDO_PASSWORD')));
 
         $this->bind('Doctrine\ORM\EntityManager')->toProvider('InakaPhper\Lunchlog\Module\Provider\DoctrineORMProvider');
+
+        // Entity
+        $this->bind('InakaPhper\Lunchlog\Entity\Shop')->toInstance(new Shop());
     }
 }
