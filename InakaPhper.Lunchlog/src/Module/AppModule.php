@@ -26,9 +26,9 @@ class AppModule extends AbstractModule
         $this->install(new PackageModule);
         $this->install(new AuraSqlModule(getenv('PDO_DSN'), getenv('PDO_USER'), getenv('PDO_PASSWORD')));
 
-        $this->bind('Doctrine\ORM\EntityManager')->toProvider('InakaPhper\Lunchlog\Module\Provider\DoctrineORMProvider');
+        $this->bind('Doctrine\ORM\EntityManager')->annotatedWith("manager")->toProvider('InakaPhper\Lunchlog\Module\Provider\DoctrineORMProvider');
 
         // Entity
-        $this->bind('InakaPhper\Lunchlog\Entity\Shop')->toInstance(new Shop());
+        $this->bind('InakaPhper\Lunchlog\Entity\Shop')->annotatedWith("shop")->toInstance(new Shop());
     }
 }

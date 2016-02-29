@@ -13,6 +13,7 @@ use BEAR\Resource\ResourceObject;
 use Doctrine\ORM\EntityManager;
 use InakaPhper\Lunchlog\Entity\Shop as Entity;
 use Ray\Di\Di\Inject;
+use Ray\Di\Di\Named;
 
 class Shop extends ResourceObject
 {
@@ -21,6 +22,9 @@ class Shop extends ResourceObject
      */
     private $entityManager;
 
+    /**
+     * @var Shop
+     */
     private $shop;
 
     /**
@@ -28,6 +32,7 @@ class Shop extends ResourceObject
      * @param EntityManager $entityManager
      * @param Entity $shop
      * @Inject
+     * @Named("entityManager=manager, shop=shop")
      */
     public function __construct(EntityManager $entityManager, Entity $shop)
     {
