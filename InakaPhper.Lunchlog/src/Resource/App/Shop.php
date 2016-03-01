@@ -100,7 +100,6 @@ class Shop extends ResourceObject
         $this->entityManager->flush();
 
         $this->headers['Location'] = '/shop?id=' . $this->shop->getId();
-        $this->code = 204;
 
         return $this;
     }
@@ -120,8 +119,6 @@ class Shop extends ResourceObject
 
         $this->entityManager->remove($this->shop);
         $this->entityManager->flush();
-
-        $this->code = 204;
 
         return $this;
     }
