@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "19b12aff79d26a3f22ff95e6640be565",
-    "content-hash": "21cf9fab927cf8d35592cfdfdebdd0f1",
+    "hash": "071bd247dcda44612219418420a0c568",
+    "content-hash": "2fc50f75348421393a59911bab0608b5",
     "packages": [
         {
             "name": "aura/cli",
@@ -1412,7 +1412,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ray-di/Ray.AuraSqlModule/zipball/2298706981e011ebdb28d615950898a2c267e32c",
+                "url": "https://api.github.com/repos/ray-di/Ray.AuraSqlModule/zipball/5777fcfc90b1e9ba8b8551d3c55c50f1d5efe84e",
                 "reference": "2298706981e011ebdb28d615950898a2c267e32c",
                 "shasum": ""
             },
@@ -1937,57 +1937,6 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2015-11-30 12:35:10"
-        },
-        {
-            "name": "vlucas/phpdotenv",
-            "version": "v2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "c10040e0df17d2ee88e9212b50cbe9319e878f59"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/c10040e0df17d2ee88e9212b50cbe9319e878f59",
-                "reference": "c10040e0df17d2ee88e9212b50cbe9319e878f59",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.9"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Dotenv\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD"
-            ],
-            "authors": [
-                {
-                    "name": "Vance Lucas",
-                    "email": "vance@vancelucas.com",
-                    "homepage": "http://www.vancelucas.com"
-                }
-            ],
-            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
-            "homepage": "http://github.com/vlucas/phpdotenv",
-            "keywords": [
-                "dotenv",
-                "env",
-                "environment"
-            ],
-            "time": "2015-10-28 18:53:35"
         }
     ],
     "packages-dev": [
@@ -3083,8 +3032,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "ray/aura-sql-module": 20,
-        "vlucas/phpdotenv": 20
+        "ray/aura-sql-module": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
