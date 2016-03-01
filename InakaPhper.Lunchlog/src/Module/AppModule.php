@@ -4,6 +4,7 @@ namespace InakaPhper\Lunchlog\Module;
 
 use BEAR\Package\PackageModule;
 use InakaPhper\Lunchlog\Entity\Shop;
+use josegonzalez\Dotenv\Loader as Dotenv;
 use Ray\AuraSqlModule\AuraSqlModule;
 use Ray\Di\AbstractModule;
 
@@ -14,6 +15,12 @@ class AppModule extends AbstractModule
      */
     protected function configure()
     {
+        Dotenv::load([
+            'filepath' => dirname(dirname(__DIR__)) . '/.env',
+            'expect' => ['PDO_DSN', 'PDO_USER', 'PDO_PASSWORD'],
+            'putenv' => true
+        ]);
+
         $this->install(new PackageModule);
         $this->install(new AuraSqlModule(getenv('PDO_DSN'), getenv('PDO_USER'), getenv('PDO_PASSWORD')));
 
