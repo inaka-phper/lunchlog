@@ -9,7 +9,8 @@
         "robmorgan/phinx": "*",
         "ray/aura-sql-module": "1.x-dev",
         "doctrine/orm": "2.5.*",
-        "josegonzalez/dotenv": "~2.0"
+        "josegonzalez/dotenv": "~2.0",
+        "koriym/db-app-package": "1.x-dev"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.8",

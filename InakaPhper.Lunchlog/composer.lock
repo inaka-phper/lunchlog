@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "062c7283f446a60ad06200457bd9ea78",
-    "content-hash": "16d6edc3e5eec9bd3c1dd49526c7b123",
+    "hash": "8d9363a9e597bbb2ca6a340142b9e40e",
+    "content-hash": "2c04d9285ed486b356de09589a4fbc14",
     "packages": [
         {
             "name": "aura/cli",
@@ -66,6 +66,60 @@
                 "stdio"
             ],
             "time": "2015-03-27 17:23:08"
+        },
+        {
+            "name": "aura/router",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/auraphp/Aura.Router.git",
+                "reference": "457efd185e4306fa671d659a66a2d9d28bf91a56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/auraphp/Aura.Router/zipball/457efd185e4306fa671d659a66a2d9d28bf91a56",
+                "reference": "457efd185e4306fa671d659a66a2d9d28bf91a56",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "aura/di": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "aura": {
+                    "type": "library",
+                    "config": {
+                        "common": "Aura\\Router\\_Config\\Common"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Aura\\Router\\": "src/",
+                    "Aura\\Router\\_Config\\": "config/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Aura.Router Contributors",
+                    "homepage": "https://github.com/auraphp/Aura.Router/contributors"
+                }
+            ],
+            "description": "A web router implementation; given a URI path and a copy of $_SERVER, it will extract path-info parameter values for a specific route.",
+            "homepage": "https://github.com/auraphp/Aura.Router",
+            "keywords": [
+                "route",
+                "router",
+                "routing"
+            ],
+            "time": "2015-07-17 15:55:37"
         },
         {
             "name": "aura/sql",
@@ -185,6 +239,62 @@
             "time": "2015-11-09 15:38:26"
         },
         {
+            "name": "aura/web",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/auraphp/Aura.Web.git",
+                "reference": "b22ba83141384981514e2057ebe99e9a5509914f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/auraphp/Aura.Web/zipball/b22ba83141384981514e2057ebe99e9a5509914f",
+                "reference": "b22ba83141384981514e2057ebe99e9a5509914f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "aura/di": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "aura": {
+                    "type": "library",
+                    "config": {
+                        "common": "Aura\\Web\\_Config\\Common"
+                    }
+                },
+                "branch-alias": {
+                    "dev-develop-2": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Aura\\Web\\": "src/",
+                    "Aura\\Web\\_Config\\": "config/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Aura.Web Contributors",
+                    "homepage": "https://github.com/auraphp/Aura.Web/contributors"
+                }
+            ],
+            "description": "Provides web Request and Response objects for use by web controllers and actions. These are representations of the PHP web environment, not HTTP request and response objects proper.",
+            "homepage": "https://github.com/auraphp/Aura.Web",
+            "keywords": [
+                "request",
+                "response"
+            ],
+            "time": "2015-03-27 18:59:27"
+        },
+        {
             "name": "bear/app-meta",
             "version": "1.0.0",
             "source": {
@@ -219,6 +329,51 @@
                 "BEAR.Sunday"
             ],
             "time": "2015-05-19 09:52:02"
+        },
+        {
+            "name": "bear/aura-router-module",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bearsunday/BEAR.AuraRouterModule.git",
+                "reference": "5dc94f3085047cb251a4f6c5b93b167466bbc000"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bearsunday/BEAR.AuraRouterModule/zipball/5dc94f3085047cb251a4f6c5b93b167466bbc000",
+                "reference": "5dc94f3085047cb251a4f6c5b93b167466bbc000",
+                "shasum": ""
+            },
+            "require": {
+                "aura/router": "~2.0",
+                "aura/web": "~2.0"
+            },
+            "require-dev": {
+                "bear/package": "~1.0@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BEAR\\Package\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Akihito Koriyama",
+                    "email": "akihito.koriyama@gmail.com"
+                }
+            ],
+            "description": "Aura Router v2 module for BEAR.Package",
+            "keywords": [
+                "BEAR.Sunday",
+                "aura",
+                "router"
+            ],
+            "time": "2016-02-04 18:23:58"
         },
         {
             "name": "bear/package",
@@ -1070,6 +1225,109 @@
             "time": "2016-01-07 16:07:20"
         },
         {
+            "name": "koriym/db-app-package",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/koriym/Koriym.DbAppPackage.git",
+                "reference": "da8f1b3f1f6db6159bcab1ac208d7bb96f377e57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/koriym/Koriym.DbAppPackage/zipball/da8f1b3f1f6db6159bcab1ac208d7bb96f377e57",
+                "reference": "da8f1b3f1f6db6159bcab1ac208d7bb96f377e57",
+                "shasum": ""
+            },
+            "require": {
+                "bear/aura-router-module": "~1.0",
+                "bear/package": "~1.0",
+                "josegonzalez/dotenv": "~2.0",
+                "koriym/dev-pdo-statement": "~0.1",
+                "koriym/now": "~1.0",
+                "koriym/query-locator": "~1.0",
+                "ray/aura-sql-module": "~1.0",
+                "robmorgan/phinx": "~0.5"
+            },
+            "require-dev": {
+                "phpunit/dbunit": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Koriym\\DbAppPackage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A database application package for BEAR.Sunday",
+            "time": "2016-02-26 02:58:57"
+        },
+        {
+            "name": "koriym/dev-pdo-statement",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/koriym/Koriym.DevPdoStatement.git",
+                "reference": "49ee617f626be00cc2712dc3ab7463b1c47859bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/koriym/Koriym.DevPdoStatement/zipball/49ee617f626be00cc2712dc3ab7463b1c47859bb",
+                "reference": "49ee617f626be00cc2712dc3ab7463b1c47859bb",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Koriym\\DevPdoStatement\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A PDOStatement for develop",
+            "keywords": [
+                "pdo"
+            ],
+            "time": "2016-02-24 11:00:16"
+        },
+        {
+            "name": "koriym/now",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/koriym/Koriym.Now.git",
+                "reference": "dbb100229bc07d651d91723790c8332e7376df1d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/koriym/Koriym.Now/zipball/dbb100229bc07d651d91723790c8332e7376df1d",
+                "reference": "dbb100229bc07d651d91723790c8332e7376df1d",
+                "shasum": ""
+            },
+            "require-dev": {
+                "ray/di": "~2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Koriym\\Now\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Pprovides current time",
+            "keywords": [
+                "now"
+            ],
+            "time": "2016-01-26 08:28:52"
+        },
+        {
             "name": "koriym/printo",
             "version": "1.0.1",
             "source": {
@@ -1153,6 +1411,39 @@
                 "psr4"
             ],
             "time": "2014-12-07 13:10:31"
+        },
+        {
+            "name": "koriym/query-locator",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/koriym/Koriym.QueryLocator.git",
+                "reference": "9a935305b1e4bdb179acc20fc4d9b15523be8e27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/koriym/Koriym.QueryLocator/zipball/9a935305b1e4bdb179acc20fc4d9b15523be8e27",
+                "reference": "9a935305b1e4bdb179acc20fc4d9b15523be8e27",
+                "shasum": ""
+            },
+            "require-dev": {
+                "ray/di": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Koriym\\QueryLocator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A SQL query locator",
+            "keywords": [
+                "sql"
+            ],
+            "time": "2016-01-29 06:04:33"
         },
         {
             "name": "m1/env",
@@ -3150,7 +3441,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "ray/aura-sql-module": 20
+        "ray/aura-sql-module": 20,
+        "koriym/db-app-package": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
