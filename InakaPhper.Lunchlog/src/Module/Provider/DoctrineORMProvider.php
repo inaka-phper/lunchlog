@@ -29,10 +29,10 @@ class DoctrineORMProvider implements ProviderInterface
             $paths, $isDevMode
         );
         $conn = [
-            'dbname' => getenv('PDO_DBNAME'),
-            'user' => getenv('PDO_USER'),
-            'password' => getenv('PDO_PASSWORD'),
-            'host' => getenv('PDO_HOST'),
+            'dbname' => $_ENV['DB_NAME'],
+            'user' => $_ENV['DB_USER'],
+            'password' => $_ENV['DB_PASS'],
+            'host' => $_ENV['DB_HOST'],
             'driver' => 'pdo_mysql',
             'charset' => 'utf8',
         ];
