@@ -5,7 +5,7 @@ namespace InakaPhper\Lunchlog\Module;
 use BEAR\Package\PackageModule;
 use InakaPhper\Lunchlog\Entity\Shop;
 use josegonzalez\Dotenv\Loader as Dotenv;
-use Ray\AuraSqlModule\AuraSqlModule;
+use Koriym\DbAppPackage\DbAppPackage;
 use Ray\Di\AbstractModule;
 
 class AppModule extends AbstractModule
@@ -17,12 +17,12 @@ class AppModule extends AbstractModule
     {
         Dotenv::load([
             'filepath' => dirname(dirname(__DIR__)) . '/.env',
-            'expect' => ['PDO_DSN', 'PDO_USER', 'PDO_PASSWORD'],
-            'putenv' => true
+            'expect' => ['DB_DSN', 'DB_USER', 'DB_PASS'],
+            'toEnv' => true
         ]);
 
         $this->install(new PackageModule);
-        $this->install(new AuraSqlModule(getenv('PDO_DSN'), getenv('PDO_USER'), getenv('PDO_PASSWORD')));
+        $this->install(new DbAppPackage($_ENV['DB_DSN'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_READ']));
 
         $this->bind('Doctrine\ORM\EntityManager')->annotatedWith("manager")->toProvider('InakaPhper\Lunchlog\Module\Provider\DoctrineORMProvider');
 
