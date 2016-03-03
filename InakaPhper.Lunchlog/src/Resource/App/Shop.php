@@ -23,7 +23,7 @@ class Shop extends ResourceObject
     private $entityManager;
 
     /**
-     * @var Shop
+     * @var Entity
      */
     private $shop;
 
