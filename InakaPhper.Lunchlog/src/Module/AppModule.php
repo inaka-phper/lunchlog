@@ -3,6 +3,7 @@
 namespace InakaPhper\Lunchlog\Module;
 
 use BEAR\Package\PackageModule;
+use InakaPhper\Lunchlog\Entity\Menu;
 use InakaPhper\Lunchlog\Entity\Shop;
 use josegonzalez\Dotenv\Loader as Dotenv;
 use Koriym\DbAppPackage\DbAppPackage;
@@ -28,5 +29,6 @@ class AppModule extends AbstractModule
 
         // Entity
         $this->bind('InakaPhper\Lunchlog\Entity\Shop')->annotatedWith("shop")->toInstance(new Shop());
+        $this->bind('InakaPhper\Lunchlog\Entity\Menu')->annotatedWith("menu")->toInstance(new Menu());
     }
 }
