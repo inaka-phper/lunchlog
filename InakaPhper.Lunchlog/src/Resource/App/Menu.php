@@ -60,7 +60,7 @@ class Menu extends ResourceObject
             }
 
             $menu = $this->entityManager->getRepository(get_class($this->menu))->findBy($conditions);
-            $menus = array_map(function ($item) {
+            $menus = array_map(function($item) {
                 return $item->toArray();
             }, $menu);
 
