@@ -9,6 +9,7 @@
 namespace InakaPhper\Lunchlog\Resource\App;
 
 
+use BEAR\Resource\Annotation\Link;
 use BEAR\Resource\ResourceObject;
 use Doctrine\ORM\EntityManager;
 use InakaPhper\Lunchlog\Entity\Shop as Entity;
@@ -48,11 +49,14 @@ class Shop extends ResourceObject
      * @throws \Doctrine\ORM\ORMException
      * @throws \Doctrine\ORM\OptimisticLockException
      * @throws \Doctrine\ORM\TransactionRequiredException
+     *
+     * @Link(crawl="post-tree", rel="menu", href="/menu?shop_id={id}")
      */
     public function onGet(int $id): ResourceObject
     {
         $shop = $this->entityManager->find(get_class($this->shop), $id);
         $this['shop'] = $shop->toArray();
+        $this['id'] = $this['shop']['id'];
 
         return $this;
     }

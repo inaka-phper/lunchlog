@@ -44,15 +44,32 @@ class Menu extends ResourceObject
      * find of menu resource.
      *
      * @param int $id
+     * @param int $shop_id
      * @return ResourceObject
      * @throws \Doctrine\ORM\ORMException
      * @throws \Doctrine\ORM\OptimisticLockException
      * @throws \Doctrine\ORM\TransactionRequiredException
      */
-    public function onGet(int $id): ResourceObject
+    public function onGet(int $id = null, int $shop_id = null): ResourceObject
     {
-        $menu = $this->entityManager->find(get_class($this->menu), $id);
-        $this['menu'] = $menu->toArray();
+        if (is_null($id)) {
+            $conditions = [];
+
+            if (!is_null($shop_id)) {
+                $conditions['shop_id'] = $shop_id;
+            }
+
+            $menu = $this->entityManager->getRepository(get_class($this->menu))->findBy($conditions);
+            $menus = array_map(function ($item) {
+                return $item->toArray();
+            }, $menu);
+
+            $this['menus'] = $menus;
+        } else {
+            $menu = $this->entityManager->find(get_class($this->menu), $id);
+            $this['menu'] = $menu->toArray();
+        }
+
 
         return $this;
     }
