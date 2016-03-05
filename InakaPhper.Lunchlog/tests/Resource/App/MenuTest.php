@@ -12,7 +12,7 @@ namespace InakaPhper\Lunchlog\Resource\App;
 class MenuTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \InakaPhper\Lunchlog\Resource\App\Menu
+     * @var \BEAR\Resource\ResourceInterface
      */
     private $resource;
 
@@ -35,10 +35,10 @@ class MenuTest extends \PHPUnit_Framework_TestCase
         ];
 
         // resource request
-        $page = $this->resource->get->uri('app://self/shop')->withQuery(['id' => 1])->eager->request();
+        $page = $this->resource->get->uri('app://self/menu')->withQuery(['id' => 1])->eager->request();
         $this->assertSame(200, $page->code);
 
-        $this->assertArraySubset($expected, $page['shop']);
+        $this->assertArraySubset($expected, $page['menu']);
     }
 
     /**
@@ -46,7 +46,7 @@ class MenuTest extends \PHPUnit_Framework_TestCase
      */
     public function testOnPost()
     {
-        $page = $this->resource->post->uri('app://self/shop')->withQuery(['shop_id' => 1, 'name' => 'bento', 'type' => 'okan'])->eager->request();
+        $page = $this->resource->post->uri('app://self/menu')->withQuery(['shop_id' => 1, 'name' => 'bento', 'type' => 'okan'])->eager->request();
         $this->assertSame(201, $page->code);
     }
 
@@ -55,7 +55,7 @@ class MenuTest extends \PHPUnit_Framework_TestCase
      */
     public function testOnPut()
     {
-        $page = $this->resource->put->uri('app://self/shop')->withQuery(['id' => 1, 'shop_id' => 1, 'name' => 'katsudon', 'type' => 'washoku'])->eager->request();
+        $page = $this->resource->put->uri('app://self/menu')->withQuery(['id' => 1, 'shop_id' => 1, 'name' => 'katsudon', 'type' => 'washoku'])->eager->request();
         $this->assertSame(200, $page->code);
     }
 
@@ -64,7 +64,7 @@ class MenuTest extends \PHPUnit_Framework_TestCase
      */
     public function testOnDelete()
     {
-        $page = $this->resource->delete->uri('app://self/shop')->withQuery(['id' => 1])->eager->request();
+        $page = $this->resource->delete->uri('app://self/menu')->withQuery(['id' => 1])->eager->request();
         $this->assertSame(200, $page->code);
     }
 }
