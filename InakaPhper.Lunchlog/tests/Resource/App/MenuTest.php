@@ -12,7 +12,7 @@ namespace InakaPhper\Lunchlog\Resource\App;
 class MenuTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \InakaPhper\Lunchlog\Resource\App\Menu
+     * @var \BEAR\Resource\ResourceInterface
      */
     private $resource;
 
