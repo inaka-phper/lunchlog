@@ -19,12 +19,12 @@ class AppModule extends AbstractModule
     {
         Dotenv::load([
             'filepath' => dirname(dirname(__DIR__)) . '/.env',
-            'expect' => ['DB_DSN', 'DB_USER', 'DB_PASS'],
+            'expect' => ['DB_DSN', 'DB_HOST', 'DB_NAME', 'DB_USER', 'DB_PASS'],
             'toEnv' => true
         ]);
 
         $this->install(new PackageModule);
-        $this->install(new DoctrineModule);
+        $this->install(new DoctrineModule($_ENV['DB_HOST'], $_ENV['DB_NAME'], $_ENV['DB_USER'], $_ENV['DB_PASS']));
         $this->install(new DbAppPackage($_ENV['DB_DSN'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_READ']));
 
         // Entity

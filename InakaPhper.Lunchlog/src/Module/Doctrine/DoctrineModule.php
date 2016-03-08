@@ -13,6 +13,43 @@ use Ray\Di\AbstractModule;
 
 class DoctrineModule extends AbstractModule
 {
+    /**
+     * @var string
+     */
+    private $host;
+
+    /**
+     * @var string
+     */
+    private $dbname;
+
+    /**
+     * @var string
+     */
+    private $user;
+
+    /**
+     * @var string
+     */
+    private $password;
+
+
+    /**
+     * DoctrineModule constructor.
+     * @param $host
+     * @param $dbname
+     * @param $user
+     * @param $password
+     */
+    public function __construct($host, $dbname, $user, $password)
+    {
+        $this->host = $host;
+        $this->dbname = $dbname;
+        $this->user = $user;
+        $this->password = $password;
+
+        parent::__construct();
+    }
 
     /**
      * {@inheritdoc}
@@ -20,10 +57,10 @@ class DoctrineModule extends AbstractModule
     protected function configure()
     {
         $conn = [
-            'dbname' => $_ENV['DB_NAME'],
-            'user' => $_ENV['DB_USER'],
-            'password' => $_ENV['DB_PASS'],
-            'host' => $_ENV['DB_HOST'],
+            'dbname' => $this->dbname,
+            'user' => $this->user,
+            'password' => $this->password,
+            'host' => $this->host,
             'driver' => 'pdo_mysql',
             'charset' => 'utf8',
         ];
